@@ -43,36 +43,12 @@ bun --version
 
 ## Step 2 — 准备源码目录
 
-将整个 `src/` 目录复制到目标机器，假设放在 `~/claude-code-src/`：
+将整个 `src/` 目录复制到目标机器，假设放在 `~/learn-claude-code/`：
 
 ```bash
 # 示例：从 U 盘或网盘复制
-cp -r /path/to/src ~/claude-code-src
-cd ~/claude-code-src
+git clone https://github.com/ZhihaoAIRobotic/learn-claude-code.git
 ```
-
-确认目录结构正确（应包含这些关键文件/目录）：
-
-```
-~/claude-code-src/
-├── entrypoints/cli.tsx    ← 入口
-├── main.tsx               ← 主逻辑
-├── tools.ts               ← 工具注册
-├── commands.ts            ← 命令注册
-├── package.json           ← 依赖声明（已提供）
-├── tsconfig.json          ← TypeScript 配置（已提供）
-├── bunfig.toml            ← Bun 配置（已提供）
-├── preload.ts             ← 运行时垫片（已提供）
-├── claude-dev             ← 启动脚本（已提供）
-├── setup-stubs.ts         ← 桩文件生成器（已提供）
-├── tools/
-├── commands/
-├── services/
-├── components/
-└── ...
-```
-
----
 
 ## Step 3 — 安装 npm 依赖
 
@@ -93,7 +69,7 @@ bun install
 需要运行一次桩文件生成脚本来补全它们：
 
 ```bash
-cd ~/claude-code-src
+cd ~/learn-claude-code
 bun run setup-stubs.ts
 ```
 
@@ -130,7 +106,7 @@ chmod +x ~/claude-code-src/claude-dev
 
 # 创建符号链接
 mkdir -p ~/.local/bin
-ln -sf ~/claude-code-src/claude-dev ~/.local/bin/claude-dev
+ln -sf PATH/learn-claude-code/claude-dev ~/.local/bin/claude-dev
 
 # 将 ~/.local/bin 加入 PATH（如果还没有的话）
 # macOS (zsh)
