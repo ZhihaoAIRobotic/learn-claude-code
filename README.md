@@ -1,4 +1,4 @@
-# Claude Code — 从源码构建与运行指南
+# Claude Code — 源码构建与本地运行指南
 
 > 适用于 macOS / Linux。Windows 请在 WSL2 下操作。
 
