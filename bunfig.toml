@@ -1,0 +1,4 @@
+preload = ["./preload.ts"]
+
+[install]
+optional = true
